@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "DetailViewController.h"
 #import "MasterViewController.h"
+#import "BTDetailViewController.h"
+#import "BTMasterViewController.h"
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
@@ -27,6 +29,10 @@
     UINavigationController *masterNavigationController = splitViewController.viewControllers[0];
     MasterViewController *controller = (MasterViewController *)masterNavigationController.topViewController;
     controller.managedObjectContext = self.persistentContainer.viewContext;
+    
+    UINavigationController *btmasterNavigationController = splitViewController.viewControllers[0];
+    BTMasterViewController *btcontroller = (BTMasterViewController *)btmasterNavigationController.topViewController;
+    btcontroller.managedObjectContext = self.persistentContainer.viewContext;
     return YES;
 }
 

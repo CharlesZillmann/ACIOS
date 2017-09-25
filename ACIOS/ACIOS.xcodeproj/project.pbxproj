@@ -17,6 +17,8 @@
 		5A13B1681F76ED0C00A3C0A7 /* ACIOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A13B1671F76ED0C00A3C0A7 /* ACIOSTests.m */; };
 		5A13B1731F76ED0C00A3C0A7 /* ACIOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A13B1721F76ED0C00A3C0A7 /* ACIOSUITests.m */; };
 		5A13B1851F77C29900A3C0A7 /* ACIOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5A13B1831F77C29900A3C0A7 /* ACIOS.xcdatamodeld */; };
+		5A1BE4501F796712005DBDDC /* BTMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1BE44F1F796712005DBDDC /* BTMasterViewController.m */; };
+		5A1BE4531F79673F005DBDDC /* BTDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1BE4521F79673F005DBDDC /* BTDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,10 @@
 		5A13B1721F76ED0C00A3C0A7 /* ACIOSUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ACIOSUITests.m; sourceTree = "<group>"; };
 		5A13B1741F76ED0C00A3C0A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A13B1841F77C29900A3C0A7 /* ACIOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ACIOS.xcdatamodel; sourceTree = "<group>"; };
+		5A1BE44E1F796701005DBDDC /* BTMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTMasterViewController.h; sourceTree = "<group>"; };
+		5A1BE44F1F796712005DBDDC /* BTMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTMasterViewController.m; sourceTree = "<group>"; };
+		5A1BE4511F79672D005DBDDC /* BTDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDetailViewController.h; sourceTree = "<group>"; };
+		5A1BE4521F79673F005DBDDC /* BTDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,10 @@
 				5A13B14F1F76ED0B00A3C0A7 /* MasterViewController.m */,
 				5A13B1511F76ED0B00A3C0A7 /* DetailViewController.h */,
 				5A13B1521F76ED0C00A3C0A7 /* DetailViewController.m */,
+				5A1BE44E1F796701005DBDDC /* BTMasterViewController.h */,
+				5A1BE44F1F796712005DBDDC /* BTMasterViewController.m */,
+				5A1BE4511F79672D005DBDDC /* BTDetailViewController.h */,
+				5A1BE4521F79673F005DBDDC /* BTDetailViewController.m */,
 				5A13B1541F76ED0C00A3C0A7 /* Main.storyboard */,
 				5A13B1571F76ED0C00A3C0A7 /* Assets.xcassets */,
 				5A13B1591F76ED0C00A3C0A7 /* LaunchScreen.storyboard */,
@@ -275,8 +285,10 @@
 			files = (
 				5A13B15E1F76ED0C00A3C0A7 /* main.m in Sources */,
 				5A13B14A1F76ED0B00A3C0A7 /* AppDelegate.m in Sources */,
+				5A1BE4501F796712005DBDDC /* BTMasterViewController.m in Sources */,
 				5A13B1501F76ED0B00A3C0A7 /* MasterViewController.m in Sources */,
 				5A13B1531F76ED0C00A3C0A7 /* DetailViewController.m in Sources */,
+				5A1BE4531F79673F005DBDDC /* BTDetailViewController.m in Sources */,
 				5A13B1851F77C29900A3C0A7 /* ACIOS.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

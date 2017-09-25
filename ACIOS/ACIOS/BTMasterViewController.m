@@ -1,23 +1,23 @@
 //
-//  MasterViewController.m
+//  BTMasterViewController.m
 //  ACIOS
 //
 //  Created by Charles Zillmann on 9/23/17.
 //  Copyright © 2017 Charles Zillmann. All rights reserved.
 //
 
-#import "MasterViewController.h"
-#import "DetailViewController.h"
+#import "BTMasterViewController.h"
+#import "BTDetailViewController.h"
 
-@interface MasterViewController ()
+@interface BTMasterViewController ()
 
 @end
 
-@implementation MasterViewController
+@implementation BTMasterViewController
 
 - (void)initializeFetchedResultsController
 {
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Deployment"];
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"BuildTask"];
     
     NSSortDescriptor *NameSort = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
     
@@ -40,9 +40,9 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewBuildTask:)];
     self.navigationItem.rightBarButtonItem = addButton;
-    self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    self.btdetailViewController = (BTDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
 }
 
 
@@ -60,9 +60,9 @@
 
 #define TimeStamp [NSString stringWithFormat:@"%f",[[NSDate date] timeIntervalSince1970] * 1000]
 
-- (void)insertNewObject:(id)sender {
+- (void)insertNewBuildTask:(id)sender {
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-    Deployment *newDeployment = [[Deployment alloc] initWithContext:context];
+    BuildTask *newBuildTask = [[BuildTask alloc] initWithContext:context];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateStyle = NSDateFormatterMediumStyle;
@@ -74,11 +74,13 @@
     dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
     NSLog(@"%@", [dateFormatter stringFromDate:date]); // Jan 2, 2001
     
-    NSString *firstString = @"New Deployment";
-    newDeployment.creationdate = [dateFormatter stringFromDate:date];
-    newDeployment.lastediteddate = newDeployment.creationdate;
+//    NSString *firstString = @"New Build Task";
+    newBuildTask.name = @"New Build Task";
+    newBuildTask.filename = @"templatefilesname";
+    newBuildTask.taskinput = @"worksheet";
+    newBuildTask.taskselected = true;
     // If appropriate, configure the new managed object.
-    newDeployment.name = firstString;
+    
     //newDeployment.name = [firstString stringByAppendingString:newDeployment.creationdate ];
     
     // Save the context.
@@ -97,8 +99,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        Deployment *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-        DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
+        BuildTask *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        BTDetailViewController *controller = (BTDetailViewController *)[[segue destinationViewController] topViewController];
         [controller setDetailItem:object];
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
@@ -108,32 +110,32 @@
 
 #pragma mark - Table View
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableDView {
+- (NSInteger)numberOfSectionsInTableBTView:(UITableView *)tableBTView {
     return [[self.fetchedResultsController sections] count];
 }
 
 
-- (NSInteger)tableDView:(UITableView *)tableDView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableBTView:(UITableView *)tableBTView numberOfRowsInSection:(NSInteger)section {
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
     return [sectionInfo numberOfObjects];
 }
 
 
-- (UITableViewCell *)tableDView:(UITableView *)tableDView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableDView dequeueReusableCellWithIdentifier:@"DeploymentCell" forIndexPath:indexPath];
-    Deployment *deployment = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    [self configureCell:cell withEvent:deployment];
+- (UITableViewCell *)tableBTView:(UITableView *)tableBTView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableBTView dequeueReusableCellWithIdentifier:@"BuildTaskCell" forIndexPath:indexPath];
+    BuildTask *buildtask = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [self configureCell:cell withEvent:buildtask];
     return cell;
 }
 
 
-- (BOOL)tableDView:(UITableView *)tableDView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+- (BOOL)tableBTView:(UITableView *)tableBTView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
 
 
-- (void)tableDView:(UITableView *)tableDView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableBTView:(UITableView *)tableBTView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
         [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
@@ -149,12 +151,12 @@
 }
 
 
-- (void)configureCell:(UITableViewCell *)cell withEvent:(Deployment *)Deployment {
+- (void)configureCell:(UITableViewCell *)cell withEvent:(BuildTask *)BuildTask {
     
-    NSString *firstString = Deployment.namingconvention;
+    NSString *firstString = BuildTask.taskinput;
     firstString = [firstString stringByAppendingString:@"/"];
-    firstString = [firstString stringByAppendingString:Deployment.architecturestandard ];
-    cell.textLabel.text = Deployment.name.description;
+    firstString = [firstString stringByAppendingString:BuildTask.filename ];
+    cell.textLabel.text = BuildTask.name.description;
     cell.detailTextLabel.text = firstString;
     
     //Deployment.creationdate;
@@ -164,12 +166,12 @@
 
 #pragma mark - Fetched results controller
 
-- (NSFetchedResultsController<Deployment *> *)fetchedResultsController {
+- (NSFetchedResultsController<BuildTask *> *)fetchedResultsController {
     if (_fetchedResultsController != nil) {
         return _fetchedResultsController;
     }
     
-    NSFetchRequest<Deployment *> *fetchRequest = Deployment.fetchRequest;
+    NSFetchRequest<BuildTask *> *fetchRequest = BuildTask.fetchRequest;
     
     // Set the batch size to a suitable number.
     [fetchRequest setFetchBatchSize:20];
@@ -181,7 +183,7 @@
     
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
-    NSFetchedResultsController<Deployment *> *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
+    NSFetchedResultsController<BuildTask *> *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:@"Master"];
     aFetchedResultsController.delegate = self;
     
     NSError *error = nil;
@@ -219,24 +221,24 @@
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
        atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
       newIndexPath:(NSIndexPath *)newIndexPath {
-    UITableView *tableDView = self.tableView;
+    UITableView *tableBTView = self.tableView;
     
     switch(type) {
         case NSFetchedResultsChangeInsert:
-            [tableDView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [tableBTView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
             
         case NSFetchedResultsChangeDelete:
-            [tableDView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [tableBTView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
             
         case NSFetchedResultsChangeUpdate:
-            [self configureCell:[tableDView cellForRowAtIndexPath:indexPath] withEvent:anObject];
+            [self configureCell:[tableBTView cellForRowAtIndexPath:indexPath] withEvent:anObject];
             break;
             
         case NSFetchedResultsChangeMove:
-            [self configureCell:[tableDView cellForRowAtIndexPath:indexPath] withEvent:anObject];
-            [tableDView moveRowAtIndexPath:indexPath toIndexPath:newIndexPath];
+            [self configureCell:[tableBTView cellForRowAtIndexPath:indexPath] withEvent:anObject];
+            [tableBTView moveRowAtIndexPath:indexPath toIndexPath:newIndexPath];
             break;
     }
 }

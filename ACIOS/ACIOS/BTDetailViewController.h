@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "ACIOS+CoreDataModel.h"
 
-@interface DetailViewController : UIViewController
+@interface BTDetailViewController : UIViewController
 
-@property (strong, nonatomic) Deployment *detailItem;
+@property (strong, nonatomic) BuildTask *detailItem;
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 
 @end

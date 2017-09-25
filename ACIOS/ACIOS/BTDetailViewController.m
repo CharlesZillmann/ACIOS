@@ -6,13 +6,13 @@
 //  Copyright © 2017 Charles Zillmann. All rights reserved.
 //
 
-#import "DetailViewController.h"
+#import "BTDetailViewController.h"
 
-@interface DetailViewController ()
+@interface BTDetailViewController ()
 
 @end
 
-@implementation DetailViewController
+@implementation BTDetailViewController
 
 - (void)configureView {
     // Update the user interface for the detail item.
@@ -37,7 +37,7 @@
 
 #pragma mark - Managing the detail item
 
-- (void)setDetailItem:(Deployment *)newDetailItem {
+- (void)setDetailItem:(BuildTask *)newDetailItem {
     if (_detailItem != newDetailItem) {
         _detailItem = newDetailItem;
         

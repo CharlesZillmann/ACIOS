@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13240" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="AAEP" representedClassName="AAEP" syncable="YES" codeGenerationType="class">
+        <attribute name="eid" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="enableinfravlan" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="l3extdom" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="physdom" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vmmdom" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deployment" inverseName="aaep" inverseEntity="Deployment" syncable="YES"/>
+    </entity>
+    <entity name="APICController" representedClassName="APICController" syncable="YES" codeGenerationType="class">
+        <attribute name="apiciduser" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cimcgw" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cimcip" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eid" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="hostname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="inbandgw" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="inbandip" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="oobgw" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="oobid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deployment" inverseName="apiccontroller" inverseEntity="Deployment" syncable="YES"/>
+    </entity>
+    <entity name="AppProfile" representedClassName="AppProfile" syncable="YES" codeGenerationType="class">
+        <attribute name="eid" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tenant" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deployment" inverseName="appprofile" inverseEntity="Deployment" syncable="YES"/>
+    </entity>
+    <entity name="BridgeDomain" representedClassName="BridgeDomain" syncable="YES" codeGenerationType="class">
+        <attribute name="arpflood" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bdgatewayip" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bdtype" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="column3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="context" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eid" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="garpbasedlearn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="igmpsnoop" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ipsubnetcheck" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="l2unknownunicast" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="l3out" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="l3unknownmulticast" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="monitoringpolicy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="multidestflood" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subnettype" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tenant" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="unicastrouting" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deployment" inverseName="bridgedomain" inverseEntity="Deployment" syncable="YES"/>
+    </entity>
+    <entity name="BuildTask" representedClassName="BuildTask" syncable="YES" codeGenerationType="class">
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eid" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="filename" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="taskinput" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="taskselected" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deployment" inverseName="buildtask" inverseEntity="Deployment" syncable="YES"/>
+    </entity>
+    <entity name="CableMatrix" representedClassName="CableMatrix" syncable="YES" codeGenerationType="class">
+        <attribute name="cabletype" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="connectiontype" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="devicetype" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eid" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="fromleafnode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fromport" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fromroom" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fromtransceiver" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tonode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="toport" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="toroom" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="totransceiver" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deployment" inverseName="cablematrix" inverseEntity="Deployment" syncable="YES"/>
+    </entity>
+    <entity name="Context" representedClassName="Context" syncable="YES" codeGenerationType="class">
+        <attribute name="bgptimers" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dnslabel" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eid" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="epretention" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="monitoringpolicy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ospftimers" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="policyenforcement" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="routetagpolicy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tenant" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deployment" inverseName="context" inverseEntity="Deployment" syncable="YES"/>
+    </entity>
+    <entity name="Contract" representedClassName="Contract" syncable="YES" codeGenerationType="class">
+        <attribute name="eid" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="filter" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="scope" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subject" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tenant" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deployment" inverseName="contract" inverseEntity="Deployment" syncable="YES"/>
+    </entity>
+    <entity name="Deployment" representedClassName="Deployment" syncable="YES" codeGenerationType="class">
+        <attribute name="architecturestandard" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="creationdate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="customer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eid" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="lastediteddate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="namingconvention" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="aaep" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AAEP" inverseName="relationship" inverseEntity="AAEP" syncable="YES"/>
+        <relationship name="apiccontroller" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="APICController" inverseName="relationship" inverseEntity="APICController" syncable="YES"/>
+        <relationship name="appprofile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AppProfile" inverseName="relationship" inverseEntity="AppProfile" syncable="YES"/>
+        <relationship name="bridgedomain" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BridgeDomain" inverseName="relationship" inverseEntity="BridgeDomain" syncable="YES"/>
+        <relationship name="buildtask" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="BuildTask" inverseName="relationship" inverseEntity="BuildTask" syncable="YES"/>
+        <relationship name="cablematrix" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CableMatrix" inverseName="relationship" inverseEntity="CableMatrix" syncable="YES"/>
+        <relationship name="context" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Context" inverseName="relationship" inverseEntity="Context" syncable="YES"/>
+        <relationship name="contract" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Contract" inverseName="relationship" inverseEntity="Contract" syncable="YES"/>
+        <relationship name="devices" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Devices" inverseName="relationship" inverseEntity="Devices" syncable="YES"/>
+        <relationship name="endpointgroup" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EndPointGroup" inverseName="relationship" inverseEntity="EndPointGroup" syncable="YES"/>
+        <relationship name="epgcontract" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EPGContract" inverseName="relationship" inverseEntity="EPGContract" syncable="YES"/>
+        <relationship name="epgstaticbinding" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EPGStaticBinding" inverseName="relationship" inverseEntity="EPGStaticBinding" syncable="YES"/>
+        <relationship name="externalepg" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ExternalEPG" inverseName="relationship" inverseEntity="ExternalEPG" syncable="YES"/>
+        <relationship name="fabricinitialconfig" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FabricInitialConfig" inverseName="relationship" inverseEntity="FabricInitialConfig" syncable="YES"/>
+        <relationship name="fexinterfaceprofile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FEXInterfaceProfile" inverseName="relationship" inverseEntity="FEXInterfaceProfile" syncable="YES"/>
+        <relationship name="fexprovisioning" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FEXProvisioning" inverseName="relationship" inverseEntity="FEXProvisioning" syncable="YES"/>
+        <relationship name="interfacepolicies" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="InterfacePolicies" inverseName="relationship" inverseEntity="InterfacePolicies" syncable="YES"/>
+        <relationship name="interfacepolicygroup" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="InterfacePolicyGroup" inverseName="relationship" inverseEntity="InterfacePolicyGroup" syncable="YES"/>
+        <relationship name="interfaceprofile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="InterfaceProfile" inverseName="relationship" inverseEntity="InterfaceProfile" syncable="YES"/>
+        <relationship name="l3out" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="L3Out" inverseName="relationship" inverseEntity="L3Out" syncable="YES"/>
+        <relationship name="l3outintprofile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="L3OutIntProfile" inverseName="relationship" inverseEntity="L3OutIntProfile" syncable="YES"/>
+        <relationship name="l3outprofile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="L3OutProfile" inverseName="relationship" inverseEntity="L3OutProfile" syncable="YES"/>
+        <relationship name="nodeprovisioning" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NodeProvisioning" inverseName="relationship" inverseEntity="NodeProvisioning" syncable="YES"/>
+        <relationship name="physicaldomain" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PhysicalDomain" inverseName="relationship" inverseEntity="PhysicalDomain" syncable="YES"/>
+        <relationship name="switchprofile" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SwitchProfile" inverseName="relationship" inverseEntity="SwitchProfile" syncable="YES"/>
+        <relationship name="swprofintprof" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SwProfIntProf" inverseName="relationship" inverseEntity="SwProfIntProf" syncable="YES"/>
+        <relationship name="templates" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ZSysTemplates" inverseName="relationship" inverseEntity="ZSysTemplates" syncable="YES"/>
+        <relationship name="tenant" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Tenant" inverseName="relationship" inverseEntity="Tenant" syncable="YES"/>
+        <relationship name="vlanpool" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VLANPool" inverseName="relationship" inverseEntity="VLANPool" syncable="YES"/>
+        <relationship name="vmmdomain" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VMMDomain" inverseName="relationship" inverseEntity="VMMDomain" syncable="YES"/>
+        <relationship name="vpcdomain" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VPCDomain" inverseName="relationship" inverseEntity="VPCDomain" syncable="YES"/>
+    </entity>
+    <entity name="Devices" representedClassName="Devices" syncable="YES" codeGenerationType="class">
+        <attribute name="dcroom" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="devicename" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eid" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="rack" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deployment" inverseName="devices" inverseEntity="Deployment" syncable="YES"/>
+    </entity>
+    <entity name="EndPointGroup" representedClassName="EndPointGroup" syncable="YES" codeGenerationType="class">
+        <attribute name="appprofile" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bridgedomain" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eid" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="intraepgisolationenabled" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="physdomain" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tenant" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vmmdomain" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deployment" inverseName="endpointgroup" inverseEntity="Deployment" syncable="YES"/>
+    </entity>
+    <entity name="EPGContract" representedClassName="EPGContract" syncable="YES" codeGenerationType="class">
+        <attribute name="appprofile" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="consumedctr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="contract" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eid" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="providedctr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tenant" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deployment" inverseName="epgcontract" inverseEntity="Deployment" syncable="YES"/>
+        <fetchedProperty name="fetchedProperty" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="EPGContract"/>
+        </fetchedProperty>
+    </entity>
+    <entity name="EPGStaticBinding" representedClassName="EPGStaticBinding" syncable="YES" codeGenerationType="class">
+        <attribute name="accessportid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="appprofile" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eid" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="encapvlanid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="interfacepolicy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="leftnodeid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rightnodeid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="staticbindingtype" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tenant" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deployment" inverseName="epgstaticbinding" inverseEntity="Deployment" syncable="YES"/>
+    </entity>
+    <entity name="Event6" representedClassName="Event6" codeGenerationType="class">
+        <attribute name="timestamp" optional="YES" attributeType="Date">
+            <userInfo/>
+        </attribute>
+        <userInfo/>
+    </entity>
+    <entity name="ExternalEPG" representedClassName="ExternalEPG" syncable="YES" codeGenerationType="class">
+        <attribute name="consumedcontract" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eid" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="l3out" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="providedcontract" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subnet" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tenant" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deployment" inverseName="externalepg" inverseEntity="Deployment" syncable="YES"/>
+    </entity>
+    <entity name="FabricInitialConfig" representedClassName="FabricInitialConfig" syncable="YES" codeGenerationType="class">
+        <attribute name="adminpassword" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bdmulticastaddresspool" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eid" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="fabricname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="numberofcontrollers" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="teppool" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vlanidinfranetwork" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deployment" inverseName="fabricinitialconfig" inverseEntity="Deployment" syncable="YES"/>
+    </entity>
+    <entity name="FEXInterfaceProfile" representedClassName="FEXInterfaceProfile" syncable="YES" codeGenerationType="class">
+        <attribute name="check" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eid" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="fexid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fromport" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="intpolgroup" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="intpolgrouptype" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="intsel" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="parentleafid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="slotid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="toport" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deployment" inverseName="fexinterfaceprofile" inverseEntity="Deployment" syncable="YES"/>
+    </entity>
+    <entity name="FEXProvisioning" representedClassName="FEXProvisioning" syncable="YES" codeGenerationType="class">
+        <attribute name="eid" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="fexid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fromport" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fromslot" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="parentleafid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="toport" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="toslot" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deployment" inverseName="fexprovisioning" inverseEntity="Deployment" syncable="YES"/>
+    </entity>
+    <entity name="InterfacePolicies" representedClassName="InterfacePolicies" syncable="YES" codeGenerationType="class">
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eid" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deployment" inverseName="interfacepolicies" inverseEntity="Deployment" syncable="YES"/>
+    </entity>
+    <entity name="InterfacePolicyGroup" representedClassName="InterfacePolicyGroup" syncable="YES" codeGenerationType="class">
+        <attribute name="aaep" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cdppol" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eid" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="l2intpol" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lacppol" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="linkpol" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lldppol" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mcppol" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="monitor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="portsec" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stormpol" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stppol" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deployment" inverseName="interfacepolicygroup" inverseEntity="Deployment" syncable="YES"/>
+    </entity>
+    <entity name="InterfaceProfile" representedClassName="InterfaceProfile" syncable="YES" codeGenerationType="class">
+        <attribute name="check" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eid" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="fromport" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="interfaceselector" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="intpolgroup" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="intpolgrouptype" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="slotid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="toport" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deployment" inverseName="interfaceprofile" inverseEntity="Deployment" syncable="YES"/>
+    </entity>
+    <entity name="L3Out" representedClassName="L3Out" syncable="YES" codeGenerationType="class">
+        <attribute name="areatype" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eid" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="enablebgp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="enableospf" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="l3outdomain" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ospfareaid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tenant" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vrf" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deployment" inverseName="l3out" inverseEntity="Deployment" syncable="YES"/>
+    </entity>
+    <entity name="L3OutIntProfile" representedClassName="L3OutIntProfile" syncable="YES" codeGenerationType="class">
+        <attribute name="eid" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="intpolgroup" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="l3out" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="l3outnodeprofile" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="leftnodeid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ospfinterfacepolicy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rightnodeid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="svi1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="svi2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tenant" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vlanid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deployment" inverseName="l3outintprofile" inverseEntity="Deployment" syncable="YES"/>
+    </entity>
+    <entity name="L3OutProfile" representedClassName="L3OutProfile" syncable="YES" codeGenerationType="class">
+        <attribute name="eid" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="l3out" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nodeid1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nodeid2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="routerid1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="routerid2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tenant" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deployment" inverseName="l3outprofile" inverseEntity="Deployment" syncable="YES"/>
+    </entity>
+    <entity name="NodeProvisioning" representedClassName="NodeProvisioning" syncable="YES" codeGenerationType="class">
+        <attribute name="devicetype" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eid" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="inbandgw" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="inbandip" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nodeid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="oobgw" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="oobip" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="podid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="role" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="serialnumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deployment" inverseName="nodeprovisioning" inverseEntity="Deployment" syncable="YES"/>
+    </entity>
+    <entity name="PhysicalDomain" representedClassName="PhysicalDomain" syncable="YES" codeGenerationType="class">
+        <attribute name="eid" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vlanpool" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deployment" inverseName="physicaldomain" inverseEntity="Deployment" syncable="YES"/>
+    </entity>
+    <entity name="SwitchProfile" representedClassName="SwitchProfile" syncable="YES" codeGenerationType="class">
+        <attribute name="eid" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="fromnodeid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="policygroup" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="switchselec" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tonodeid" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deployment" inverseName="switchprofile" inverseEntity="Deployment" syncable="YES"/>
+    </entity>
+    <entity name="SwProfIntProf" representedClassName="SwProfIntProf" syncable="YES" codeGenerationType="class">
+        <attribute name="eid" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="intprofile" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deployment" inverseName="swprofintprof" inverseEntity="Deployment" syncable="YES"/>
+    </entity>
+    <entity name="Tenant" representedClassName="Tenant" syncable="YES" codeGenerationType="class">
+        <attribute name="ctrlmgmtpolicy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eid" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="monpolicy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="securitydomain" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tags" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deployment" inverseName="tenant" inverseEntity="Deployment" syncable="YES"/>
+    </entity>
+    <entity name="VLANPool" representedClassName="VLANPool" syncable="YES" codeGenerationType="class">
+        <attribute name="allocmode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eid" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startvlan" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stopvlan" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deployment" inverseName="vlanpool" inverseEntity="Deployment" syncable="YES"/>
+    </entity>
+    <entity name="VMMDomain" representedClassName="VMMDomain" syncable="YES" codeGenerationType="class">
+        <attribute name="eid" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vcentercontrollername" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vcentercredentialprofile" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vcenterdatacentername" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vcenterhostnameip" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vcenterpassword" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vcenterusername" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vlandynamicpool" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deployment" inverseName="vmmdomain" inverseEntity="Deployment" syncable="YES"/>
+    </entity>
+    <entity name="VPCDomain" representedClassName="VPCDomain" syncable="YES" codeGenerationType="class">
+        <attribute name="domainpolicy" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eid" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="leftnode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="logicalpairid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rightnode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="status" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deployment" inverseName="vpcdomain" inverseEntity="Deployment" syncable="YES"/>
+    </entity>
+    <entity name="ZSysArchStandard" representedClassName="ZSysArchStandard" syncable="YES" codeGenerationType="class">
+        <attribute name="eid" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="filename" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="ZSysNamingConvention" representedClassName="ZSysNamingConvention" syncable="YES" codeGenerationType="class">
+        <attribute name="eid" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="filename" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="ZSysTemplates" representedClassName="ZSysTemplates" syncable="YES" codeGenerationType="class">
+        <attribute name="eid" optional="YES" attributeType="UUID" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="version" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Deployment" inverseName="templates" inverseEntity="Deployment" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="AAEP" positionX="-414" positionY="-90" width="119" height="148"/>
+        <element name="APICController" positionX="-135" positionY="-85" width="128" height="193"/>
+        <element name="AppProfile" positionX="270" positionY="176" width="128" height="103"/>
+        <element name="BridgeDomain" positionX="-135" positionY="116" width="128" height="343"/>
+        <element name="BuildTask" positionX="-279" positionY="-90" width="128" height="133"/>
+        <element name="CableMatrix" positionX="135" positionY="-81" width="128" height="253"/>
+        <element name="Context" positionX="279" positionY="524" width="128" height="223"/>
+        <element name="Contract" positionX="-2" positionY="392" width="128" height="148"/>
+        <element name="Deployment" positionX="-666" positionY="-72" width="128" height="628"/>
+        <element name="Devices" positionX="-0" positionY="-88" width="128" height="133"/>
+        <element name="EndPointGroup" positionX="-135" positionY="459" width="128" height="193"/>
+        <element name="EPGContract" positionX="135" positionY="288" width="171" height="191"/>
+        <element name="EPGStaticBinding" positionX="135" positionY="488" width="128" height="223"/>
+        <element name="Event6" positionX="-198" positionY="-126" width="128" height="58"/>
+        <element name="ExternalEPG" positionX="-0" positionY="54" width="128" height="163"/>
+        <element name="FabricInitialConfig" positionX="574" positionY="441" width="128" height="163"/>
+        <element name="FEXInterfaceProfile" positionX="-270" positionY="648" width="128" height="208"/>
+        <element name="FEXProvisioning" positionX="547" positionY="72" width="128" height="193"/>
+        <element name="InterfacePolicies" positionX="135" positionY="176" width="128" height="103"/>
+        <element name="InterfacePolicyGroup" positionX="430" positionY="522" width="128" height="268"/>
+        <element name="InterfaceProfile" positionX="-135" positionY="657" width="128" height="193"/>
+        <element name="L3Out" positionX="-270" positionY="455" width="128" height="193"/>
+        <element name="L3OutIntProfile" positionX="270" positionY="-81" width="128" height="238"/>
+        <element name="L3OutProfile" positionX="-270" positionY="263" width="128" height="178"/>
+        <element name="NodeProvisioning" positionX="403" positionY="243" width="128" height="238"/>
+        <element name="PhysicalDomain" positionX="403" positionY="117" width="128" height="118"/>
+        <element name="SwitchProfile" positionX="-0" positionY="225" width="128" height="163"/>
+        <element name="SwProfIntProf" positionX="-279" positionY="45" width="128" height="103"/>
+        <element name="Tenant" positionX="-0" positionY="548" width="128" height="163"/>
+        <element name="VLANPool" positionX="549" positionY="-70" width="128" height="133"/>
+        <element name="VMMDomain" positionX="403" positionY="-76" width="128" height="193"/>
+        <element name="VPCDomain" positionX="547" positionY="270" width="128" height="163"/>
+        <element name="ZSysNamingConvention" positionX="-432" positionY="90" width="128" height="90"/>
+        <element name="ZSysArchStandard" positionX="-423" positionY="99" width="128" height="90"/>
+        <element name="ZSysTemplates" positionX="-441" positionY="45" width="128" height="120"/>
+    </elements>
+</model>
